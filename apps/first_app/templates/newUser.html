@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Users New</title>
+</head>
+<body>
+<h1>Add a new user</h1>
+{% if messages %}
+	{% for message in messages %}
+		<p>{{message}}</p>
+	{% endfor %}
+{% endif %}
+<form action='create' method='post'>
+		{% csrf_token %}
+ First name: <input type='text' name='first_name'>
+ Last name: <input type='text' name='last_name'>
+ Email: <input type='text' name='email'>
+ <button>Create</button>
+</form>
+<a href = "{% url 'users' %}">Go Back</a>
+</body>
+</html>
